@@ -7,7 +7,7 @@ pygame.init()
 
 window = pygame.display.set_mode((800, 600))
 window.fill((0, 0, 0))
-pygame.display.set_caption("Game")
+pygame.display.set_caption("Falling Crate Catcher")
 
 player = pygame.surface.Surface((100, 100))
 player.fill((255, 255, 255))
