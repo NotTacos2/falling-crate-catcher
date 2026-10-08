@@ -5,13 +5,18 @@ import sys
 
 pygame.init()
 
+if getattr(sys, 'frozen', False):
+    BASE_DIR = sys._MEIPASS
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 window = pygame.display.set_mode((800, 600))
 window.fill((0, 0, 0))
 pygame.display.set_caption("Falling Crate Catcher")
 
 player = pygame.surface.Surface((100, 100))
 player.fill((255, 255, 255))
-player = pygame.image.load("imgs/cat.png").convert_alpha()
+player = pygame.image.load(os.path.join(BASE_DIR, "imgs", "cat.png")).convert_alpha()
 player = pygame.transform.scale(player, (100, 100))
 
 score = 0
@@ -28,7 +33,7 @@ gameoverscreen = font.render("Game over. Press R to try again", True, (0, 0, 0))
 
 falling_object = pygame.surface.Surface((50, 50))
 falling_object.fill((0, 0, 0))
-falling_object = pygame.image.load("imgs/crate.png").convert_alpha()
+falling_object = pygame.image.load(os.path.join(BASE_DIR, "imgs", "crate.png")).convert_alpha()
 falling_object = pygame.transform.scale(falling_object, (100, 100))
 
 player_x = 0
