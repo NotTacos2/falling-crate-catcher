@@ -11,7 +11,7 @@ pygame.display.set_caption("Game")
 
 player = pygame.surface.Surface((100, 100))
 player.fill((255, 255, 255))
-player = pygame.image.load("img/veritycat.png").convert_alpha()
+player = pygame.image.load("imgs/cat.png").convert_alpha()
 player = pygame.transform.scale(player, (100, 100))
 
 score = 0
@@ -28,7 +28,7 @@ gameoverscreen = font.render("Game over. Press R to try again", True, (0, 0, 0))
 
 falling_object = pygame.surface.Surface((50, 50))
 falling_object.fill((0, 0, 0))
-falling_object = pygame.image.load("img/crate.png").convert_alpha()
+falling_object = pygame.image.load("imgs/crate.png").convert_alpha()
 falling_object = pygame.transform.scale(falling_object, (100, 100))
 
 player_x = 0
@@ -52,7 +52,6 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             sys.exit()
-
 
         if game_state == 2:
             if event.type == pygame.KEYDOWN:
